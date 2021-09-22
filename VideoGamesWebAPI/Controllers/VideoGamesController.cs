@@ -20,7 +20,7 @@
     /// Defines the _videoGames.
     /// </summary>
     public static List<VideoGame> _videoGames = new List<VideoGame>(){
-        new VideoGame{Id=1, Name="Rainbow Six Siege", Price=40, Category="FPS", Developer="Ubisoft Montreal", Publisher="Ubisoft"},
+        new VideoGame{Id=1, Name="Rainbow Six: Siege", Price=40, Category="FPS", Developer="Ubisoft Montreal", Publisher="Ubisoft"},
         new VideoGame{Id=2, Name="Fifa 21", Price=60, Category="Sports", Developer="EA Canada", Publisher="EA"},
         new VideoGame{Id=3, Name="The Elder Scrolls V: Skyrim", Price=30, Category="RPG", Developer="Bethesda Game Studios", Publisher="Bethesda Softworks"},
       };
@@ -51,7 +51,7 @@
           vg.Price >= (filters.MoreExpensiveThan is not null ? int.Parse(filters.MoreExpensiveThan) : vg.Price)
         );
 
-        switch(filters.SortBy.ToLower())
+        switch(filters.SortBy?.ToLower())
         {
           case "name":
             videoGames.Sort((a, b) => a.Name.CompareTo(b.Name));
